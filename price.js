@@ -30,7 +30,7 @@ auth = http.post(PAYPAL_OAUTH_API, {
 // 2. Set up your server to receive a call from the client
 function handleRequest(n) {
   // 3. Call PayPal to set up a transaction
-  if(!(n instanceof Number))
+  if(isNaN(n))
   	return {"error" : "Invalid activation number"};
 
   order = http.post(PAYPAL_ORDER_API, {
