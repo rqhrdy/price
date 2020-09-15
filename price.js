@@ -28,7 +28,7 @@ auth = http.post(PAYPAL_OAUTH_API, {
 });
 
 // 2. Set up your server to receive a call from the client
-export function handleRequest(n) {
+function handleRequest(n) {
   // 3. Call PayPal to set up a transaction
   if(!(n instanceof Number))
   	return {"error" : "Invalid activation number"};
