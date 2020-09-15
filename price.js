@@ -4,6 +4,7 @@ function calculatePrice(n) {
     return n*89.99;
 }
 
+
 // Note: This is example code. Each server platform and programming language has a different way of handling requests, making HTTP API calls, and serving responses to the browser.
 
 // 1. Set up your server to make calls to PayPal
@@ -27,11 +28,11 @@ auth = http.post(PAYPAL_OAUTH_API {
 });
 
 // 2. Set up your server to receive a call from the client
-async function handleRequest(n) {
+export function handleRequest(n) {
   // 3. Call PayPal to set up a transaction
   if(!(n instanceof Number))
   	return {"error" : "Invalid activation number"};
-  
+
   order = http.post(PAYPAL_ORDER_API, {
     headers: {
       Accept:        `application/json`,
