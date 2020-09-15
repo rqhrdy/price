@@ -19,7 +19,7 @@ PAYPAL_ORDER_API = 'https://api.sandbox.paypal.com/v2/checkout/orders/';
 
 // 1c. Get an access token from the PayPal API
 basicAuth = base64encode(`${ PAYPAL_CLIENT }:${ PAYPAL_SECRET }`);
-auth = http.post(PAYPAL_OAUTH_API {
+auth = http.post(PAYPAL_OAUTH_API, {
   headers: {
     Accept:        `application/json`,
     Authorization: `Basic ${ basicAuth }`
